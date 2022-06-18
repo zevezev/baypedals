@@ -7,34 +7,40 @@ import { imgSrcFromArrayBuffer } from "../../utility/utilityFunctions";
 import deleteAllPosts from "../../convex/deleteAllPosts";
 import Image from "next/image";
 import usePostHandlers from "../../handlers/PostHandlers/usePostHandlers";
+import { styled } from "@mui/system";
+import Post from "../components/Post/Post";
+import PostList from "../components/Post/PostList";
 
 const HomeContent: React.FC = () => {
-  const {uploadImageFromFile,deleteAllPosts,imagePosts} = usePostHandlers();
-  const {
-    getRootProps,
-    getInputProps,
-    open,
-    acceptedFiles,
-  } = useDropzone({
+  const { uploadImageFromFile, deleteAllPosts, imagePosts } = usePostHandlers();
+  const { getRootProps, getInputProps, open, acceptedFiles } = useDropzone({
     noClick: true,
   });
 
-  useEffect(()=>{acceptedFiles.forEach((file) =>{
-   uploadImageFromFile(file);
-  });},[acceptedFiles])
+  useEffect(() => {
+    acceptedFiles.forEach((file) => {
+      uploadImageFromFile(file);
+    });
+  }, [acceptedFiles]);
+
   return (
-      <div className={styles.main}>
-        <h1>BAY PEDALS</h1>
-        <Box flex='1' width='100%' display = 'flex' flexDirection ='column' >
-          {imagePosts.map((post,index)=>{
-             return <Box key ={index} width = '100%' height = '100%' flex = '1' position = 'relative'><Image  src={post.imgSrc} layout = 'fill' objectFit="contain"/></Box>})} 
-         </Box>
-        <div {...getRootProps()}>
-          <input {...getInputProps()} />
-          <Button onClick={open}>Upload!</Button>
-        </div>
+    <div className={styles.main}>
+      <h1>BAY PEDALS: your Bay Area biker zine</h1>
+      <PostList />
+      <div {...getRootProps()}>
+        <input {...getInputProps()} />
+        <Button onClick={open}>Upload!</Button>
       </div>
+    </div>
   );
 };
+
+const IssueViewBox = styled("div")({
+  flex: "1",
+  width: "100%",
+  display: "flex",
+  flexDirection: "column",
+  overflow: "auto",
+});
 
 export default HomeContent;

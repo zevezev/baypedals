@@ -9,9 +9,14 @@ const usePostHandlers = () => {
 
   const imagePosts =
     rawImagePosts?.map((post) => {
-      return { ...post, imgSrc: imgSrcFromArrayBuffer(post.buffer) };
+      return {
+        ...post,
+        imgSrc: imgSrcFromArrayBuffer(post.buffer),
+        description: post.description || "",
+      };
     }) || [];
 
+  //TODO: create an upload dialog
   const uploadImageFromFile = async (file: File) => {
     //todo: downsample the image so it's < 1mb
     const arrayBuffer = await file.arrayBuffer();

@@ -6,4 +6,5 @@ export type Post = {
   buffer: ArrayBuffer;
   imgSrc?: string;
   time: number;
+  description: string;
 };
