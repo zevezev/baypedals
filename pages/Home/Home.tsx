@@ -22,7 +22,7 @@ const HomeContent: React.FC = () => {
       uploadImageFromFile(file);
     });
   }, [acceptedFiles]);
-
+  //...fix the linter somehow
   return (
     <div className={styles.main}>
       <h1>BAY PEDALS: your Bay Area biker zine</h1>
