@@ -1,3 +1,3 @@
-export const Title = () => {
+export const Title: React.FC = () => {
   return <div></div>;
 };
