@@ -1,3 +1,4 @@
-export const Title: React.FC = () => {
+const Title: React.FC = () => {
   return <div></div>;
 };
+export default Title;
