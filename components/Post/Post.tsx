@@ -1,5 +1,5 @@
 import React from "react";
-import { Post } from "../../../utility/common";
+import { Post } from "../../utility/common";
 import Image from "next/image";
 import { styled } from "@mui/system";
 import PostImage from "./PostImage";

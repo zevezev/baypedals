@@ -8,8 +8,8 @@ import deleteAllPosts from "../../convex/deleteAllPosts";
 import Image from "next/image";
 import usePostHandlers from "../../handlers/PostHandlers/usePostHandlers";
 import { styled } from "@mui/system";
-import Post from "../components/Post/Post";
-import PostList from "../components/Post/PostList";
+import Post from "../../components/Post/Post";
+import PostList from "../../components/Post/PostList";
 
 const HomeContent: React.FC = () => {
   const { uploadImageFromFile, deleteAllPosts, imagePosts } = usePostHandlers();

@@ -1,6 +1,6 @@
 import { styled } from "@mui/system";
 import React from "react";
-import usePostHandlers from "../../../handlers/PostHandlers/usePostHandlers";
+import usePostHandlers from "../../handlers/PostHandlers/usePostHandlers";
 import Post from "./Post";
 
 // TODO: should this read as scrollable, or as a book?
