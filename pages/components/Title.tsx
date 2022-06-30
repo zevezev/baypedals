@@ -1,1 +1,3 @@
-export const Title = () => {}
+export const Title = () => {
+  return <div></div>;
+};
