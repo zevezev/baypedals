@@ -5,6 +5,8 @@ import { Post } from "../utility/common";
 
 // Send a chat message.
 export default mutation(async ({ db }) => {
-  const posts:Post[] =  await db.table('posts').collect();
-  posts.forEach((post)=>db.delete(post._id))
+  const posts: Post[] = await db.table("posts").collect();
+  posts.forEach((post) => {
+    if (post._id) db.delete(post._id);
+  });
 });
